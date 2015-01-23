@@ -31,7 +31,7 @@ Open your application configuration in **protected/config/main.php** and modify 
 
 #3. Example
 ![alt text](http://i.imgur.com/NZWjeNf.png "GiiStrap Generator!")
-#4. Credit
+#4. Credits
 
 * [YiiStrap](http://www.getyiistrap.com/)
 * [TCPDF](http://www.tcpdf.org/)
