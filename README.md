@@ -30,7 +30,7 @@ Open your application configuration in **protected/config/main.php** and modify 
 ```
 
 #3. Example
-![alt text](http://i.imgur.com/IczDsB3.png "GiiStrap Generator!")
+![alt text](http://i.imgur.com/NZWjeNf.png "GiiStrap Generator!")
 #4. Credit
 
 * [YiiStrap](http://www.getyiistrap.com/)
