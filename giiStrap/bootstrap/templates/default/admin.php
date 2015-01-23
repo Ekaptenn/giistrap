@@ -17,11 +17,6 @@ echo "\$this->breadcrumbs=array(
 );\n";
 ?>
 
-$this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index')),
-	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -43,6 +38,23 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
 
+<?php echo "<?php "; ?>
+
+$this->widget('bootstrap.widgets.TbNav', array(
+    'type' => TbHtml::NAV_TYPE_PILLS,
+	'items'=>array(
+		array('label'=>'Create', 'icon'=>'icon-plus', 'url'=>Yii::app()->controller->createUrl('create'), 'linkOptions'=>array()),
+                array('label'=>'List', 'icon'=>'icon-th-list', 'url'=>Yii::app()->controller->createUrl('index'),'active'=>true, 'linkOptions'=>array()),
+		array('label'=>'Search', 'icon'=>'icon-search', 'url'=>'#', 'linkOptions'=>array('class'=>'search-button')),
+		array('label'=>'Export to PDF', 'icon'=>'icon-download', 'url'=>Yii::app()->controller->createUrl('GeneratePdf'), 'linkOptions'=>array('target'=>'_blank'), 'visible'=>true),
+		array('label'=>'Export to Excel', 'icon'=>'icon-download', 'url'=>Yii::app()->controller->createUrl('GenerateExcel'), 'linkOptions'=>array('target'=>'_blank'), 'visible'=>true),
+	),
+));
+
+
+<?php echo "?> "; ?>
+
+
 <?php echo "<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>"; ?>
 
 <div class="search-form" style="display:none">
@@ -50,7 +62,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'model'=>\$model,
 )); ?>\n"; ?>
 </div><!-- search-form -->
-
+<br><br>
 <?php echo "<?php "; ?> $this->widget('bootstrap.widgets.TbGridView',array(
     'type' => TbHtml::GRID_TYPE_BORDERED,
 	'id'=>'<?php echo $this->class2id($this->modelClass); ?>-grid',
