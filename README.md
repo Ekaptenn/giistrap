@@ -1,5 +1,6 @@
 # giiStrap
 Another fun CRUD generator for YiiStrap.
+`Support Bootstrap 2.3.2`
 
 #1. Download
 
