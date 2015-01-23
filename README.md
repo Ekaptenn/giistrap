@@ -1,6 +1,6 @@
 # giiStrap
 Another fun CRUD generator for YiiStrap.
-`Support Bootstrap 2.3.2`
+`Support Bootstrap 2.3.2` ,
 `Support YiiFramework 1.1.16`
 
 #1. Download
